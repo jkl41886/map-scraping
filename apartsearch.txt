@@ -1,0 +1,20 @@
+a search like
+apartments near Scotland, UK
+
+name
+rating
+number of reviews
+address
+address pluscode
+web address
+category
+phone
+any photo urls
+price (if available)
+
+same search should work for
+apartments near Sicily, Italy
+
+or any other location
+
+AIzaSyDzgMF3RhgefADmSPAfyeKuPIWtRb10LrE
