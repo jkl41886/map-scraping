@@ -17,25 +17,32 @@ def get_data(data):
   if len(data) > 0:
     return data[0].text
   else:
-    return 'NaN'
+    return 'Not available.'
 
 def scrape_data(driver):
   time.sleep(1)
   name = driver.find_element_by_xpath("//h1[@class='section-hero-header-title']").text
+  print("name: "+name)
   ratings = driver.find_elements_by_xpath("//span[@class='section-star-display']")
   rating = get_data(ratings)
+  print("rating: "+rating)
   reviews = driver.find_elements_by_xpath("//li[@class='section-rating-term']//button[@class='widget-pane-link']")
   review = get_data(reviews)
+  print("review: "+review)
   addresses = driver.find_elements_by_xpath("//div[@data-section-id='ad']//span[@class='section-info-text']//span[@class='widget-pane-link']")
   address = get_data(addresses)
+  print("address: "+address)
   pluscodes = driver.find_elements_by_xpath("//div[@data-section-id='ol']//span[@class='section-info-text']//span[@class='widget-pane-link']")
   pluscode = get_data(pluscodes)
+  print("pluscode: "+pluscode)
   websites = driver.find_elements_by_xpath("//div[@data-section-id='ap']//span[@class='section-info-text']//span[@class='widget-pane-link']")
   website = get_data(websites)
+  print("website: "+website)
   phones = driver.find_elements_by_xpath("//div[@data-section-id='pn0']//span[@class='section-info-text']//span[@class='widget-pane-link']")
   phone = get_data(phones)
+  print("phone: "+phone)
   photoUrl = driver.find_elements_by_xpath("//div[@class='section-image-pack-image-container']//img")[0].get_attribute('src')
-  
+  print("photoUrl: "+photoUrl)
   # ################# inserting data into mysql table
   
   add_apartment = ("INSERT INTO "+tablename+" "
